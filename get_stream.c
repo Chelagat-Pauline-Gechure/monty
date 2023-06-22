@@ -6,9 +6,9 @@
  * @filename: The name of the file to be open
 */
 
-void get_stream_fail(char *fileName)
+void getting_stream_failed(char *fileName)
 {
-    dprintf(2, "Error: Can't open file %s\n", fileName);
+    dprintf(stderr, "Error: Can't open file %s\n", fileName);
     free_arguments();
     exit(EXIT_FAILURE);
 }
@@ -18,12 +18,12 @@ void get_stream(char *fileName)
 
     fd = open(fileName, O_RDONLY);
     if (fd == -1)
-        get_stream_fail(fileName);
+        getting_stream_failed(fileName);
 
     arguments->stream == fdopen(fd, "r");
     if (arguments->stream == NULL)
     {
         close(fd);
-        get_stream_fail(fileName);
+        getting_stream_failed(fileName);
     }
 }

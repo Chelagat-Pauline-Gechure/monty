@@ -6,7 +6,7 @@
  * @argc: The number of command line arguments
 */
 
-void validate_args(int argc)
+void validate_arguments(int argc)
 {
     if (argc == 2)
         return;

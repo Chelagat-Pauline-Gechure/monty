@@ -55,11 +55,11 @@ extern arg_t *arguments;
 
 /*Function Prototypes*/
 int dprintf(int fd, const char *format, ...);
-void get_stream_fail(char *fileName);
+void getting_stream_failed(char *fileName);
 void get_stream(char *fileName);
-void initialize_args();
+void initialize_arguments();
 void free_arguments();
-void validate_args(int argc);
-void malloc_fail(void);
+void validate_arguments(int argc);
+void malloc_failed(void);
 
 #endif

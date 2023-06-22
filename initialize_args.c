@@ -4,11 +4,11 @@
  * initialize_args - Initialize pointer to arg_s structure.
 */
 
-void initialize_args()
+void initialize_arguments()
 {
     arguments = malloc(sizeof(arg_t));
     if (arguments == NULL)
-        malloc_fail();
+        malloc_failed();
     arguments->stream = NULL;
     arguments->line = NULL;
 }
