@@ -1,6 +1,8 @@
 #ifndef MONTY_H
 #define MONTY_H
 
+#include <stdlib.h>
+#include <stdio.h>
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -31,4 +33,24 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+/**
+ * struct arg_s - hold variables
+ * @stream: File that connects to the stream from file
+ * @line: string which will be the line of the text read from the stream
+ * 
+ * Description: holds variables to be used
+ * in different functions of the project
+ * also variables that will require
+ * memory allocation
+*/
+typedef struct arg_s
+{
+	FILE *stream;
+	char *line;
+} arg_t
+
+extern arg_t *arguments;
+
+/*Function Prototypes*/
+int dprintf(int fd, const char *format, ...);
 #endif
