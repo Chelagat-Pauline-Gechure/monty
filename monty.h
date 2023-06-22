@@ -62,6 +62,4 @@ void free_arguments();
 void validate_args(int argc);
 void malloc_fail(void);
 
-void formated_pall(stack_t **head, unsigned int counter)
-
 #endif
