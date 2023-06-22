@@ -3,6 +3,8 @@
 
 #include <stdlib.h>
 #include <stdio.h>
+#include <unistd.h>
+#include <fcntl.h>
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -47,10 +49,17 @@ typedef struct arg_s
 {
 	FILE *stream;
 	char *line;
-} arg_t
+} arg_t;
 
 extern arg_t *arguments;
 
 /*Function Prototypes*/
 int dprintf(int fd, const char *format, ...);
+void get_stream_fail(char *fileName);
+void get_stream(char *fileName);
+void initialize_args();
+void free_arguments();
+void validate_args(int argc);
+void malloc_fail(void);
+
 #endif
